@@ -55,7 +55,8 @@ It supports object attributes, nested attributes, and arrays of objects. You can
 		stay: 123,
 		nested: [{
 			keepMe: 'keep me2',
-			removeMe: 'remove me2'
+			removeMe: 'remove me2',
+			someBs: 'bs'
 		}, {
 			keepMe: 'keep me2',
 			removeMe: 'remove me2'
