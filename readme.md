@@ -1,5 +1,85 @@
 #Keep.js
 
+##What is it for?
+Keep was created to remove all the shit that may be added to your beautiful objects.
+
+It extends Object via Object.prototype, so you can call it directly on your object.
+
+It supports object attributes, nested attributes, and arrays of objects. You can nest as deep as you want. Like an object that has a property that's an array of objects, and those object have a property that's an array of objects. Damn, that's a lot of objects.
+
+##Keep specific attributes
+
+	var myObject = {
+		somethingIWant: 'keep me!',
+		shit: 'some shit'
+	};
+	
+	myObject.keep({
+		somethingIWant: true
+	});
+	
+	console.log(myObject);
+	// {
+	//     somethingIWant: 'keep me!'
+	// }
+
+##Keep nested objects
+
+	var myObject = {
+		stay: 123,
+		nested: {
+			keepMe: 'keep me',
+			removeMe: 'remove me'
+		},
+		shit: 'some shit'
+	};
+	
+	myObject.keep({
+		nested: {
+			keepMe: true
+		},
+		stay: true
+	});
+	
+	console.log(myObject);
+	// {
+	//     stay: 123,
+	//     nested: {
+	//         keepMe: 'keep me'
+	//	   }
+	// }
+
+##Keep attributes on arrays of objects
+
+	var myObject = {
+		stay: 123,
+		nested: [{
+			keepMe: 'keep me2',
+			removeMe: 'remove me2'
+		}, {
+			keepMe: 'keep me2',
+			removeMe: 'remove me2'
+		}],
+		shit: 'some shit'
+	};
+	
+	myObject.keep({
+		nested: [{
+			keepMe: true
+		}],
+		stay: true
+	});
+	
+	console.log(myObject);
+	// {
+	//		stay: 123,
+	//		nested: [{
+	//			keepMe: 'keep me'
+	//		}, {
+	//			keepMe: 'keep me2'
+	//		}]
+	// }
+
 ##License
 The MIT License (MIT)
 
