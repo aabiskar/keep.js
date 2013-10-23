@@ -1,0 +1,25 @@
+{
+  "name": "keep",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewjmead/keep.js.git"
+  },
+  "author": "Andrew Mead - andrewjosephmead@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewjmead/keep.js/issues"
+  },
+  "dependencies": {
+    "mocha": "~1.13.0",
+    "should": "~2.0.2"
+  }
+}
