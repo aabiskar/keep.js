@@ -81,6 +81,13 @@ It supports object attributes, nested attributes, and arrays of objects. You can
 	//		}]
 	// }
 
+##Run tests
+
+Keep.js is tested with mocha. To run the tests for yourself, navigate to the repo and run the following commands.
+
+	> npm install
+	> mocha
+
 ##License
 The MIT License (MIT)
 
