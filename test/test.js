@@ -125,6 +125,22 @@ it('should filter array objects', function () {
     });
 });
 
+it('should not modify the actual objects', function () {
+    var obj = {
+        name: 'andrew',
+        other: 'other'
+    };
+
+    obj.keep({
+        name: true
+    });
+
+    obj.should.eql({
+        name: 'andrew',
+        other: 'other'
+    });
+});
+
 it('should filter nest arrays with arrays', function () {
     var obj = {
         name: 'name',

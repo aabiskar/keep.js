@@ -14,7 +14,7 @@ It supports object attributes, nested attributes, and arrays of objects. You can
 		shit: 'some shit'
 	};
 	
-	myObject.keep({
+	myObject = myObject.keep({
 		somethingIWant: true
 	});
 	
@@ -34,7 +34,7 @@ It supports object attributes, nested attributes, and arrays of objects. You can
 		shit: 'some shit'
 	};
 	
-	myObject.keep({
+	myObject = myObject.keep({
 		nested: {
 			keepMe: true
 		},
@@ -63,7 +63,7 @@ It supports object attributes, nested attributes, and arrays of objects. You can
 		shit: 'some shit'
 	};
 	
-	myObject.keep({
+	myObject = myObject.keep({
 		nested: [{
 			keepMe: true
 		}],
