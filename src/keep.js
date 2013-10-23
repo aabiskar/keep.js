@@ -3,8 +3,6 @@
  * Written By Andrew Mead
  */
 
-// todo - need to remove objects that I may have added if a nested object had no trues
-
 /**
  * Object.keep
  *
@@ -28,6 +26,9 @@ Object.prototype.keep = function (toKeep) {
             if(orig.hasOwnProperty(key) && toKeep[key] === true) {
                 keeping[key] = orig[key]
             // if it's an object, go deeper
+            } else if (Array.isArray(orig[key])) {
+                keeping[key] = [];
+                matchArray.call(undefined, orig[key], toKeep[key], keeping[key])
             } else if (typeof toKeep[key] === 'object') {
 
                 // added an empty object if its undefined
@@ -38,6 +39,19 @@ Object.prototype.keep = function (toKeep) {
                 // call the same function, but with the current key
                 match.call(undefined, orig[key], toKeep[key], keeping[key]);
             }
+        }
+    }
+
+    /**
+     * matchArray
+     *
+     * is the object if an array, run method to filter all the arrays objects*/
+    function matchArray (orig, toKeep, keeping) {
+        // navigate though arrays and shit
+        var i;
+        for (i = 0; i < orig.length; i++) {
+            keeping[i] = {};
+            match.call(undefined, orig[i], toKeep[0], keeping[i])
         }
     }
 
